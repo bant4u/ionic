@@ -10,12 +10,39 @@
 </ion-header>
 
 <ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of [1,1,1,1]; let i = index">
+          <ion-badge slot="start">{{i+1}}</ion-badge>
+          <ion-label>
+            <h2>Heading</h2>
+            <p>This is paragraph.</p>
+          </ion-label>
+          <ion-badge slot="end" color="danger">
+            <ion-icon name="trash"></ion-icon>
+          </ion-badge>
+        </ion-item>
+      </ion-list>
+      <ion-fab vertical="top" horizontal="end" slot="fixed">
+          <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <ion-card *ngFor="let item of [1, 1, 1, 1]">
+            <ion-img src="/assets/dummy.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Title</ion-card-title>
+              <p>This is the content area.</p>
+            </ion-card-content>
+          </ion-card>
+      
+      
+    
   <ion-list>
     <ion-item *ngFor="let item of items">
       <ion-icon [name]="item.icon" slot="start"></ion-icon>
       {{item.title}}
       <div class="item-note" slot="end">
-        {{item.note}}
+        {{item.note}} 
       </div>
     </ion-item>
   </ion-list>
